@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Office Network Design | Adebayo Adebolu</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/theme.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">Adebayo<span>.</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="page">
+
+<section class="page-header">
+<h1>Enterprise Network Segmentation & Security Architecture</h1>
+<p>Design and simulation of a secure multi-department enterprise network using Cisco technologies</p>
+</section>
+
+<section class="project-details">
+
+<h2>📌 Project Overview</h2>
+<p>
+Designed and simulated a segmented office network connecting Admin, Sales, and HR departments
+while enforcing security restrictions to prevent unauthorized lateral movement.
+</p>
+
+<h2>🎯 Objectives</h2>
+<ul>
+<li>Design scalable enterprise topology</li>
+<li>Implement subnetting and routing</li>
+<li>Apply security restrictions using ACLs</li>
+<li>Validate connectivity and segmentation</li>
+</ul>
+
+<h2>🏗 Network Architecture</h2>
+<table>
+<tr><th>Department</th><th>Subnet</th><th>Gateway</th></tr>
+<tr><td>Admin</td><td>192.168.10.0/24</td><td>192.168.10.1</td></tr>
+<tr><td>Sales</td><td>192.168.20.0/24</td><td>192.168.20.1</td></tr>
+<tr><td>HR</td><td>192.168.30.0/24</td><td>192.168.30.1</td></tr>
+</table>
+
+<h2>🔐 Security Implementation</h2>
+<p>
+Implemented an Access Control List blocking HR from accessing Admin resources — 
+a real-world lateral movement prevention control used in enterprise environments.
+</p>
+
+<pre>
+access-list 101 deny ip 192.168.30.0 0.0.0.255 192.168.10.0 0.0.0.255
+access-list 101 permit ip any any
+</pre>
+
+<h2>🧪 Testing Results</h2>
+<ul>
+<li>Admin ↔ Sales: Allowed</li>
+<li>Sales ↔ HR: Allowed</li>
+<li>HR → Admin: Blocked</li>
+<li>Segmentation working as designed</li>
+</ul>
+
+<h2>💡 Skills Demonstrated</h2>
+<ul>
+<li>Network Design</li>
+<li>Routing & Subnetting</li>
+<li>Access Control Lists</li>
+<li>Security Architecture</li>
+<li>Zero Trust Segmentation</li>
+</ul>
+
+<a class="btn" href="projects.html">⬅ Back to Projects</a>
+
+</section>
+</main>
+
+<footer>
+<p>© 2026 Adebayo Adebolu</p>
+</footer>
+
+</body>
+</html>
