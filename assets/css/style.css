@@ -249,3 +249,20 @@ footer .socials a {
   border-left:5px solid #00ff9c;
   font-weight:bold;
 }
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #00ff9c;
+}
+
+.logo:hover {
+  opacity: 0.85;
+}
+
