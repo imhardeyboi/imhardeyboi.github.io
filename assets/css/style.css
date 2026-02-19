@@ -214,3 +214,38 @@ footer .socials a {
   border-radius: 6px;
 }
 
+.project-page { padding: 40px; max-width: 1000px; margin:auto; }
+
+.project-section { margin: 60px 0; }
+
+.project-img {
+  width:100%;
+  margin-top:20px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.code-block {
+  background:#0d1117;
+  color:#00ff9c;
+  padding:20px;
+  border-radius:10px;
+  overflow:auto;
+}
+
+.tech-table {
+  width:100%;
+  border-collapse: collapse;
+  margin-top:20px;
+}
+.tech-table th, .tech-table td {
+  border:1px solid #444;
+  padding:12px;
+}
+
+.result-box {
+  background:#0b3d2e;
+  padding:20px;
+  border-left:5px solid #00ff9c;
+  font-weight:bold;
+}
