@@ -179,7 +179,7 @@ footer .socials a {
   margin: 0 0.5rem;
   color: white;
 }
-.project-details {
+/*.project-details {
   max-width: 900px;
   margin: auto;
   line-height: 1.8;
@@ -213,7 +213,7 @@ footer .socials a {
   text-decoration: none;
   border-radius: 6px;
 }
-
+*/
 .project-page { padding: 40px; max-width: 1000px; margin:auto; }
 
 .project-section { margin: 60px 0; }
