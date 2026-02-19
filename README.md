@@ -1,4 +1,4 @@
-# 👨🏽‍💻 Adebayo Adebolu — Cybersecurity Engineer
+# 👨🏽‍💻 Adebayo Adebolu — Cybersecurity Analyst
 
 Welcome to my professional cybersecurity portfolio. This repository hosts my GitHub Pages website showcasing my projects, research, certifications, and professional journey in cybersecurity and network engineering.
 
