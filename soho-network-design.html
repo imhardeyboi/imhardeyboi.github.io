@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Secure Office Network Design | Adebayo Adebolu</title>
+<title>Enterprise Network Segmentation Lab | Adebayo Adebolu</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/theme.css">
 </head>
@@ -14,79 +13,154 @@
   <div class="logo">Adebayo<span>.</span></div>
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html" class="active">Projects</a>
+    <a href="projects.html">Projects</a>
     <a href="resume.html">Resume</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<main class="page">
+<main class="project-page">
 
-<section class="page-header">
-<h1>Enterprise Network Segmentation & Security Architecture</h1>
-<p>Design and simulation of a secure multi-department enterprise network using Cisco technologies</p>
+<section class="project-hero">
+  <h1>Enterprise Network Segmentation & Access Control Lab</h1>
+  <p class="subtitle">Designing a secure multi-department corporate network using routing, subnetting, and ACL security enforcement.</p>
 </section>
 
-<section class="project-details">
-
+<section class="project-section">
 <h2>📌 Project Overview</h2>
 <p>
-Designed and simulated a segmented office network connecting Admin, Sales, and HR departments
-while enforcing security restrictions to prevent unauthorized lateral movement.
+Organizations rely on segmented networks to prevent lateral movement during cyber attacks.
+This lab simulates a real corporate office where departments must communicate while maintaining security boundaries.
 </p>
 
-<h2>🎯 Objectives</h2>
 <ul>
-<li>Design scalable enterprise topology</li>
-<li>Implement subnetting and routing</li>
-<li>Apply security restrictions using ACLs</li>
-<li>Validate connectivity and segmentation</li>
+<li>3 Departments: Admin, Sales, HR</li>
+<li>Router-based inter-VLAN routing</li>
+<li>Access Control Lists for traffic restriction</li>
+<li>Connectivity and security validation</li>
 </ul>
+</section>
 
-<h2>🏗 Network Architecture</h2>
-<table>
+<section class="project-section">
+<h2>🏗️ Network Architecture</h2>
+
+<h3>Subnet Design</h3>
+
+<table class="tech-table">
 <tr><th>Department</th><th>Subnet</th><th>Gateway</th></tr>
 <tr><td>Admin</td><td>192.168.10.0/24</td><td>192.168.10.1</td></tr>
 <tr><td>Sales</td><td>192.168.20.0/24</td><td>192.168.20.1</td></tr>
 <tr><td>HR</td><td>192.168.30.0/24</td><td>192.168.30.1</td></tr>
 </table>
 
-<h2>🔐 Security Implementation</h2>
+<p>Each department was isolated into its own subnet to reduce broadcast domains and improve security posture.</p>
+
+<img src="assets/images/topology.png" class="project-img">
+</section>
+
+<section class="project-section">
+<h2>⚙️ Router Configuration</h2>
+
+<pre class="code-block">
+interface GigabitEthernet0/0
+ip address 192.168.10.1 255.255.255.0
+no shutdown
+
+interface GigabitEthernet0/1
+ip address 192.168.20.1 255.255.255.0
+no shutdown
+
+interface GigabitEthernet0/2
+ip address 192.168.30.1 255.255.255.0
+no shutdown
+</pre>
+
+<p>This enabled routing between isolated departmental networks.</p>
+</section>
+
+<section class="project-section">
+<h2>🛡️ Security Implementation (ACL)</h2>
+
 <p>
-Implemented an Access Control List blocking HR from accessing Admin resources — 
-a real-world lateral movement prevention control used in enterprise environments.
+Security requirement: HR department must NOT access Admin resources while all other communication remains allowed.
 </p>
 
-<pre>
+<pre class="code-block">
 access-list 101 deny ip 192.168.30.0 0.0.0.255 192.168.10.0 0.0.0.255
 access-list 101 permit ip any any
 </pre>
 
-<h2>🧪 Testing Results</h2>
-<ul>
-<li>Admin ↔ Sales: Allowed</li>
-<li>Sales ↔ HR: Allowed</li>
-<li>HR → Admin: Blocked</li>
-<li>Segmentation working as designed</li>
-</ul>
+<p>The ACL enforces least privilege access — a core Zero Trust principle.</p>
 
-<h2>💡 Skills Demonstrated</h2>
-<ul>
-<li>Network Design</li>
-<li>Routing & Subnetting</li>
-<li>Access Control Lists</li>
-<li>Security Architecture</li>
-<li>Zero Trust Segmentation</li>
-</ul>
-
-<a class="btn" href="projects.html">⬅ Back to Projects</a>
-
+<img src="assets/images/acl.png" class="project-img">
 </section>
+
+<section class="project-section">
+<h2>🧪 Testing & Validation</h2>
+
+<h3>Before Security</h3>
+<ul>
+<li>All departments communicated successfully</li>
+<li>No packet loss detected</li>
+</ul>
+
+<h3>After Security Enforcement</h3>
+<ul>
+<li>Sales ↔ Admin: Allowed</li>
+<li>Admin ↔ Sales: Allowed</li>
+<li>HR → Admin: BLOCKED ❌</li>
+</ul>
+
+<img src="assets/images/ping-success.png" class="project-img">
+<img src="assets/images/ping-blocked.png" class="project-img">
+</section>
+
+<section class="project-section">
+<h2>📊 Security Outcome</h2>
+
+<p>
+The ACL successfully prevented unauthorized access while preserving business communication.
+This demonstrates real-world network defense techniques used in enterprise environments.
+</p>
+
+<div class="result-box">
+✔ Prevented lateral movement<br>
+✔ Implemented network segmentation<br>
+✔ Enforced least privilege access<br>
+✔ Validated secure routing configuration
+</div>
+</section>
+
+<section class="project-section">
+<h2>🎯 Skills Demonstrated</h2>
+
+<ul class="skills-list">
+<li>Network segmentation</li>
+<li>Subnetting & IP addressing</li>
+<li>Router configuration (Cisco CLI)</li>
+<li>Access Control Lists</li>
+<li>Security validation testing</li>
+<li>Defensive network architecture</li>
+</ul>
+</section>
+
+<section class="project-section">
+<h2>💼 Real-World Relevance</h2>
+
+<p>
+This project models how organizations isolate sensitive systems (finance, HR, management)
+to prevent attackers from moving across the network after an initial compromise.
+</p>
+
+<p>
+It demonstrates practical defensive engineering skills expected from Network Security Engineers and SOC Analysts.
+</p>
+</section>
+
 </main>
 
 <footer>
-<p>© 2026 Adebayo Adebolu</p>
+<p>© 2026 Adebayo Adebolu — Cybersecurity Portfolio</p>
 </footer>
 
 </body>
