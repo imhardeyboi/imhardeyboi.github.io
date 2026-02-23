@@ -228,7 +228,7 @@ footer .socials a {
 .code-block {
   background:#0d1117;
   color:#00ff9c;
-  padding:20px;
+  padding:20px; 
   border-radius:10px;
   overflow:auto;
 }
