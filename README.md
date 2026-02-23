@@ -13,7 +13,7 @@ Welcome to my professional cybersecurity portfolio. This repository hosts my Git
 ## 🌐 Live Website
 🔗 https://imhardeyboi.github.io/
 
-## 📬 Contact
+## Contact
 - Email: bayoadebolu1405@gmail.com  
 - LinkedIn: https://www.linkedin.com/in/adebayo-adebolu-a3ab7aa3  
 
