@@ -60,7 +60,7 @@ This lab simulates a real corporate office where departments must communicate wh
 </section>
 
 <section class="project-section">
-<h2>⚙️Router Configuration</h2>
+<h2>Router Configuration</h2>
 
 <pre class="code-block">
 interface GigabitEthernet0/0
@@ -80,7 +80,7 @@ no shutdown
 </section>
 
 <section class="project-section">
-<h2>🛡️ Security Implementation (ACL)</h2>
+<h2>Security Implementation (ACL)</h2>
 
 <p>
 Security requirement: HR department must NOT access Admin resources while all other communication remains allowed.
@@ -97,12 +97,17 @@ access-list 101 permit ip any any
 </section>
 
 <section class="project-section">
-<h2>🧪 Testing & Validation</h2>
+<h2>Testing & Validation</h2>
 
 <h3>Before Security</h3>
 <ul>
-<li>All departments communicated successfully</li>
-<li>No packet loss detected</li>
+<li>Sales ↔ Admin: Allowed</li>
+  <img src="assets/images/acl.png" class="project-img">
+<li>Admin ↔ Sales: Allowed</li>
+  <img src="assets/images/acl.png" class="project-img">
+<li>HR → Admin: Allowed</li>
+  <img src="assets/images/acl.png" class="project-img">
+<li>All departments communicated successfully.No packet loss detected</li>
 </ul>
 
 <h3>After Security Enforcement</h3>
