@@ -104,7 +104,7 @@ access-list 101 permit ip any any
 <li>Sales ↔ Admin: Allowed</li>
   <img src="assets/images/SA ping.png" class="project-img">
 <li>Admin ↔ Sales: Allowed</li>
-  <img src="assets/images/AS oing.png" class="project-img">
+  <img src="assets/images/AS ping.png" class="project-img">
 <li>HR → Admin: Allowed</li>
   <img src="assets/images/has ping.png" class="project-img">
 <li>All departments communicated successfully.No packet loss detected</li>
@@ -115,17 +115,18 @@ access-list 101 permit ip any any
 <li>Sales ↔ Admin: Allowed</li>
   <img src="assets/images/SA ping.png" class="project-img">
 <li>Admin ↔ Sales: Allowed</li>
-  <img src="assets/images/AS oing.png" class="project-img">
+  <img src="assets/images/AS ping.png" class="project-img">
 <li>HR → Admin: BLOCKED ❌</li>
-  <img src="assets/images/AS oing.png" class="project-img">
+ <!-- <img src="assets/images/AS oing.png" class="project-img"> -->
 </ul>
 
-<img src="assets/images/ping-success.png" class="project-img">
 <img src="assets/images/hradmin ping-blocked.png" class="project-img">
+<p>After implementing the ACL, requests from the HR department to the Admin department failed with the message “Destination host unreachable.” This confirms that the router successfully blocked the traffic according to the security rules.
+The response originated from the HR gateway, proving that the Access Control List was enforced correctly. The network design, configuration, and security implementation all functioned as intended.</p>
 </section>
 
 <section class="project-section">
-<h2>📊 Security Outcome</h2>
+<h2>Security Outcome</h2>
 
 <p>
 The ACL successfully prevented unauthorized access while preserving business communication.
@@ -141,7 +142,7 @@ This demonstrates real-world network defense techniques used in enterprise envir
 </section>
 
 <section class="project-section">
-<h2>🎯 Skills Demonstrated</h2>
+<h2>Skills Demonstrated</h2>
 
 <ul class="skills-list">
 <li>Network segmentation</li>
@@ -154,7 +155,7 @@ This demonstrates real-world network defense techniques used in enterprise envir
 </section>
 
 <section class="project-section">
-<h2>💼 Real-World Relevance</h2>
+<h2>Real-World Relevance</h2>
 
 <p>
 This project models how organizations isolate sensitive systems (finance, HR, management)
