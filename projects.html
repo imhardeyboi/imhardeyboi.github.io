@@ -5,6 +5,7 @@
   <title>Projects | Adebayo Adebolu</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/interactive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -18,6 +19,7 @@
     <a href="resume.html">Resume</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
+      <button id="theme-toggle" type="button">🌙 Dark</button>
   </nav>
 </header>
 
@@ -27,20 +29,27 @@
     <p>Hands-on security engineering, analysis, and defense solutions</p>
   </section>
 
+  <div class="filter-bar" role="group" aria-label="Filter projects">
+    <button class="filter-btn active" type="button" data-filter="all">All</button>
+    <button class="filter-btn" type="button" data-filter="network">Network</button>
+    <button class="filter-btn" type="button" data-filter="threat-intel">Threat Intel</button>
+    <button class="filter-btn" type="button" data-filter="soc">SOC</button>
+  </div>
+
   <section class="projects-grid">
-    <div class="project-card">
+    <div class="project-card" data-category="network">
       <h3>Network Segmentation & Access Control</h3>
       <p>Designed and implemented secure network segmentation and Access Contro List rules for an office environment.</p>
       <span>Technologies: Cisco packet Tracer, Router, Switches</span>
       <a href="soho-network-design.html">Details</a>
     </div>
-    <div class="project-card">
+    <div class="project-card" data-category="threat-intel">
       <h3>Threat Intelligence: Profiling FIN7</h3>
       <p>Simulated FIN7 attack on a financial institution — OSINT reconnaissance, threat actor profiling, kill chain modelling, MITRE ATT&CK mapping, and layered defence recommendations.</p>
       <span>Technologies: Kali Linux, theHarvester, Shodan, Censys, MITRE ATT&CK</span>
       <a href="threat-intelligence-fin7.html">Details</a>
     </div>
-    <div class="project-card">
+    <div class="project-card" data-category="soc">
       <h3>Enhancing Linux Endpoint Security with Wazuh</h3>
       <p>Unauthorized Netcat detection on Linux endpoints using Wazuh SIEM — custom rules, real-time alerts, and a simulated attack from Kali Linux.</p>
       <span>Technologies: Wazuh SIEM, Ubuntu, Kali Linux, VirtualBox</span>
@@ -86,5 +95,7 @@
     <a href="mailto:bayoadebolu1405@gmail.com"><i class="fas fa-envelope"></i></a>
   </div>
 </footer>
+<button id="back-to-top" type="button" aria-label="Back to top">↑</button>
+<script src="assets/js/interactive.js"></script>
 </body>
 </html>
