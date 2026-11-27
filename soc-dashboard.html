@@ -70,6 +70,13 @@ margin-top:15px;
 border-radius:8px;
 }
 
+/* Fix: dark cards need light text even in light mode (kept here, in the page
+   itself, so the fix travels with the HTML and never depends on a cached CSS file) */
+.dashboard-container .card{color:#e6edf3;}
+.dashboard-container .card p{color:#c9d1d9;}
+.dashboard-container .architecture,
+.dashboard-container .screenshot{color:#e6edf3;}
+
 </style>
 
 </head>
