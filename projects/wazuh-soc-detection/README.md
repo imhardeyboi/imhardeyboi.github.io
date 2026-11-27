@@ -4,9 +4,9 @@ Detection of unauthorized Netcat executions on Linux endpoints using Wazuh, an o
 
 ## Overview
 
-Linux-based infrastructure is a prime target for attackers because of its widespread adoption in enterprise environments. At bayfuger, a growing data center and cloud services provider, threat intelligence reports showed increased attempts to exploit Linux endpoints using unauthorized tools such as Netcat. Netcat is a legitimate utility, but attackers frequently weaponize it for data exfiltration, reverse shells, and unauthorized remote access.
+Linux-based infrastructure is a prime target for attackers because of its widespread adoption in enterprise environments. At 10ALYTICS‑DC, a growing data center and cloud services provider, threat intelligence reports showed increased attempts to exploit Linux endpoints using unauthorized tools such as Netcat. Netcat is a legitimate utility, but attackers frequently weaponize it for data exfiltration, reverse shells, and unauthorized remote access.
 
-A routine audit found that engineers and third-party contractors occasionally used Netcat without authorization — a gap that could mask malicious activity. This project closes that gap with Wazuh command monitoring, custom detection rules, and real-time alerts, and serves as a blueprint for scalable endpoint protection across bayfuger's infrastructure.
+A routine audit found that engineers and third-party contractors occasionally used Netcat without authorization — a gap that could mask malicious activity. This project closes that gap with Wazuh command monitoring, custom detection rules, and real-time alerts, and serves as a blueprint for scalable endpoint protection across 10ALYTICS‑DC's infrastructure.
 
 ## Lab Environment
 
@@ -53,7 +53,7 @@ To strengthen endpoint security beyond Netcat detection:
 
 ## Report
 
-The full written report is available on request. It is not published here.
+The full report is in this folder: wazuh-soc-detection-report.pdf
 
 ## Live project page
 
