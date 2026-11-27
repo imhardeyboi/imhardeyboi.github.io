@@ -5,6 +5,7 @@
   <title>Enhancing Linux Endpoint Security with Wazuh | Adebayo</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/interactive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -17,6 +18,7 @@
     <a href="resume.html">Resume</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
+      <button id="theme-toggle" type="button">🌙 Dark</button>
   </nav>
 </header>
 
@@ -62,6 +64,10 @@
   <section>
     <h2>Attack Simulation</h2>
     <p>Kali Linux acted as the attacker, running Netcat against the Ubuntu endpoint — Netcat listening for incoming connections with <code>nc -lvp 4444</code>, mimicking a reverse shell setup.</p>
+    <div class="terminal">
+      <div class="terminal-bar"><span></span><span></span><span></span></div>
+      <div class="terminal-body" data-lines='[{"text":"kali@kali:~$ nc -lvp 4444","alert":false},{"text":"listening on [any] 4444 ...","alert":false},{"text":"[Wazuh] Alert level 7 — netcat listening for incoming connections (10.71.88.235:4444)","alert":true}]'></div>
+    </div>
   </section>
 
   <section>
@@ -72,6 +78,9 @@
       <li><strong>Severity:</strong> level 7 (medium-to-high), indicating suspicious activity requiring investigation.</li>
       <li><strong>Evidence:</strong> Wazuh Discover showed multiple log entries of Netcat actively listening on port 4444 at different timestamps, with a matching spike in the histogram.</li>
     </ul>
+    <div class="sev-meter"><span class="label">Alert severity · Level 7</span><div class="track"><div class="fill" data-level="70"></div></div><span class="label">Medium–High</span></div>
+    <p class="feed-note">Simulated replay of the lab detection — not live monitoring.</p>
+    <ul class="alert-feed" id="alert-feed"></ul>
     <p>The results prove the custom detection rule works: Wazuh provides accurate, real-time visibility into unauthorized process execution on Linux endpoints.</p>
   </section>
 
@@ -113,5 +122,7 @@
     <a href="mailto:bayoadebolu1405@gmail.com"><i class="fas fa-envelope"></i></a>
   </div>
 </footer>
+<button id="back-to-top" type="button" aria-label="Back to top">↑</button>
+<script src="assets/js/interactive.js"></script>
 </body>
 </html>

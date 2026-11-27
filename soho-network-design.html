@@ -5,6 +5,7 @@
 <title>Network Segmentation & Access Control Lab | Adebayo Adebolu</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/interactive.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -21,6 +22,7 @@
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
     
+      <button id="theme-toggle" type="button">🌙 Dark</button>
   </nav>
 </header>
 
@@ -36,7 +38,7 @@
 Organizations rely on segmented networks to prevent lateral movement during cyber attacks.
 This lab simulates a real corporate office where departments must communicate while maintaining security boundaries.
 </p>
-<p>View project files on GitHub: <a href="https://github.com/imhardeyboi/imhardeyboi.github.io/tree/main/projects/multi-department-office-network">https://github.com/imhardeyboi/imhardeyboi.github.io/tree/main/projects/multi-department-office-network</a>a></p>
+<p>View project files on GitHub: <a href="https://github.com/imhardeyboi/imhardeyboi.github.io/tree/main/projects/multi-department-office-network">https://github.com/imhardeyboi/imhardeyboi.github.io/tree/main/projects/multi-department-office-network</a></p>
 <ul>
 <li>3 Departments: Admin, Sales, HR</li>
 <li>Router-based inter-VLAN routing</li>
@@ -58,6 +60,15 @@ This lab simulates a real corporate office where departments must communicate wh
 </table>
 
 <p>Each department was isolated into its own subnet to reduce broadcast domains and improve security posture.</p>
+
+<div class="topo-explorer" role="group" aria-label="Explore departments">
+  <button class="topo-btn active" type="button" data-target="topo-admin">Admin</button>
+  <button class="topo-btn" type="button" data-target="topo-sales">Sales</button>
+  <button class="topo-btn" type="button" data-target="topo-hr">HR</button>
+</div>
+<div class="topo-detail" id="topo-admin"><strong>Admin — 192.168.10.0/24</strong><br>Gateway <code>192.168.10.1</code> on router interface Gi0/0 · PCs at <code>192.168.10.10</code> and <code>192.168.10.11</code></div>
+<div class="topo-detail" id="topo-sales"><strong>Sales — 192.168.20.0/24</strong><br>Gateway <code>192.168.20.1</code> on router interface Gi0/1 · PCs at <code>192.168.20.10</code> and <code>192.168.20.11</code></div>
+<div class="topo-detail" id="topo-hr"><strong>HR — 192.168.30.0/24</strong><br>Gateway <code>192.168.30.1</code> on router interface Gi0/2 · PCs at <code>192.168.30.10</code> and <code>192.168.30.11</code></div>
 
 <img src="assets/images/topology.png" class="project-img">
 </section>
@@ -95,6 +106,12 @@ access-list 101 permit ip any any
 </pre>
 
 <p>The ACL enforces least privilege access — a core Zero Trust principle.</p>
+
+<div class="acl-demo">
+  <button class="acl-toggle on" type="button" id="acl-toggle"><span class="switch" aria-hidden="true"></span><span class="acl-state">ACL 101: ON — HR → Admin blocked</span></button>
+  <p>Flip the switch to see what the ping tests showed with the ACL off and on.</p>
+  <ul class="ping-rows" id="ping-rows"></ul>
+</div>
 
 <img src="assets/images/acl.png" class="project-img">
 </section>
@@ -184,5 +201,7 @@ It demonstrates practical defensive engineering skills expected from Network Sec
   </div>
 </footer>
 
+<button id="back-to-top" type="button" aria-label="Back to top">↑</button>
+<script src="assets/js/interactive.js"></script>
 </body>
 </html>
