@@ -10,16 +10,32 @@
     if (!el.hasAttribute('data-aos') && !el.classList.contains('reveal')) el.classList.add('reveal');
   });
   var revealEls = document.querySelectorAll('.reveal');
+  var revealOne = function (el) { el.classList.add('visible'); };
+  /* Fallback sweep: reveal anything currently in the viewport. This catches
+     elements the observer misses during fast scrolling, and very tall
+     sections (e.g. the resume body, ~7,800px on a phone) that can never
+     reach a high intersection ratio on a small screen — with a 0.12
+     threshold such a section could stay invisible forever. */
+  var revealInView = function () {
+    revealEls.forEach(function (el) {
+      if (el.classList.contains('visible')) return;
+      var r = el.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < window.innerHeight) revealOne(el);
+    });
+  };
   if ('IntersectionObserver' in window && revealEls.length) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+        if (e.isIntersecting) { revealOne(e.target); io.unobserve(e.target); }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0 });
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
-    revealEls.forEach(function (el) { el.classList.add('visible'); });
+    revealEls.forEach(revealOne);
   }
+  revealInView();
+  window.addEventListener('scroll', revealInView, { passive: true });
+  window.addEventListener('resize', revealInView);
 
   /* ---- Dark / light theme toggle (persists) ---- */
   var KEY = 'site-theme';
