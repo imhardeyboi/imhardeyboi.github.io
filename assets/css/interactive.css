@@ -20,9 +20,11 @@
 .filter-btn:hover { border-color: var(--secondary); color: var(--secondary); }
 .filter-btn.active { background: var(--secondary); border-color: var(--secondary); color: #fff; }
 
-/* ---- Theme toggle in the navbar ---- */
-#theme-toggle { background: transparent; border: 1px solid rgba(255,255,255,.6); color: #fff; border-radius: 999px; padding: .35rem .8rem; font: inherit; font-size: .9rem; cursor: pointer; margin-left: 1.5rem; }
-#theme-toggle:hover { background: rgba(255,255,255,.12); }
+/* ---- Theme toggle in the navbar ----
+   Restyled Nov 2026 for the light-surface sticky header: the old
+   white-on-transparent rule was invisible on the new header. */
+#theme-toggle { background: transparent; border: 1px solid var(--border); color: var(--text); border-radius: 999px; padding: .35rem .8rem; font: inherit; font-size: .9rem; cursor: pointer; margin-left: 1.5rem; }
+#theme-toggle:hover { background: var(--accent-soft); border-color: var(--secondary); }
 
 /* ---- Terminal window (typing demo) ---- */
 .terminal { background: #0d1117; color: #00ff9c; border-radius: 12px; padding: 0; overflow: hidden; margin: 1.5rem 0; box-shadow: 0 10px 30px rgba(0,0,0,.25); text-align: left; }

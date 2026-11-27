@@ -1,6 +1,33 @@
+/* Dark mode for imhardeyboi.github.io — redesign Nov 27, 2026.
+   Applied when <body> carries class "dark" (toggled by interactive.js
+   and persisted in localStorage). Overrides the light-mode tokens
+   defined in :root in style.css. */
+
+/* Dark-mode tokens */
 body.dark {
-  --bg: #0a0a0a;
-  --text: #f0f0f0;
-  --card: #121212;
-  --primary: #020c1b;
+  --bg: #070d16;
+  --text: #e8eef4;
+  --muted: #9fb0c0;
+  --card: #0f1826;
+  --border: #1e2c3d;
+  --surface: #0b1524;
+  --primary: #0a1a2e;
+  --primary-deep: #050b14;
+  --secondary: #0e7c5b;
+  --accent: #00e5a0;
+  --accent-soft: rgba(0, 229, 160, .12);
+}
+
+/* .outline-dark buttons use --secondary (deep emerald) for border/text,
+   which is too dark on the dark background to read. In dark mode use
+   the bright mint --accent instead, with a dark label on hover. */
+body.dark .btn.outline-dark {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+body.dark .btn.outline-dark:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #061226;
 }
