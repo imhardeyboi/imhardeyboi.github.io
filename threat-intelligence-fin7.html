@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Threat Intelligence: Profiling FIN7 | Adebayo</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header class="navbar">
+  <a href="index.html" class="logo">🏗️<span>.</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="resume.html">Resume</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="page">
+  <section class="page-header">
+    <h1>Threat Intelligence Analysis: Profiling FIN7</h1>
+    <p>Simulated FIN7 attack on a financial institution — OSINT reconnaissance, threat actor profiling, kill chain modelling, and MITRE ATT&amp;CK mapping.</p>
+  </section>
+
+  <section>
+    <h2>Project Overview</h2>
+    <p>Financial institutions are prime targets because of the high value of financial data, transaction systems, and customer information they hold. This Cyber Threat Intelligence (CTI) assessment models a simulated attack by the financially motivated threat group FIN7 against a financial institution, using publicly available intelligence, OSINT techniques, and the MITRE ATT&amp;CK framework.</p>
+    <p>View project files on GitHub: <a href="https://github.com/imhardeyboi/imhardeyboi.github.io/tree/main/projects/threat-intelligence-fin7">https://github.com/imhardeyboi/imhardeyboi.github.io/tree/main/projects/threat-intelligence-fin7</a></p>
+    <ul>
+      <li>Passive OSINT reconnaissance in Kali Linux</li>
+      <li>Threat actor profiling of FIN7</li>
+      <li>Six-stage attack kill chain simulation</li>
+      <li>MITRE ATT&amp;CK mapping</li>
+      <li>Layered defence recommendations</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Reconnaissance (OSINT)</h2>
+    <p>Passive reconnaissance was conducted using theHarvester, Whois, Shodan, Censys, and Google dorking.</p>
+    <ul>
+      <li>theHarvester uncovered email addresses across departments plus URLs — ideal material for highly targeted spear phishing.</li>
+      <li>Hosts and subdomains were identified, including online banking portals, APIs, and a sandbox environment.</li>
+      <li>Shodan and Censys showed the host exposing Port 25 (SMTP) and Port 587 (SMTP Submission), with support for large message sizes and pipelining.</li>
+      <li>The TLS certificate was valid, trusted, and issued by a recognized certificate authority.</li>
+      <li>Infrastructure geolocated to New York, United States, within the organisation's own autonomous system.</li>
+      <li>Google dorking uncovered publicly available documents whose metadata could be used to make phishing emails more convincing or for business email compromise (BEC).</li>
+    </ul>
+    <p><strong>Key finding:</strong> the institution showed a strong infrastructure-level security posture — encrypted communications, hardened external services, and likely web application firewall deployment — but its human-facing attack surface remained susceptible to targeted phishing.</p>
+  </section>
+
+  <section>
+    <h2>Threat Actor Profiling (FIN7)</h2>
+    <p>FIN7 is a highly organised, financially motivated cybercriminal group, also known as the Carbanak Group and the Navigator Group. It targets financial institutions, retail organisations, and payment processing systems, combining technical sophistication with social engineering.</p>
+    <ul>
+      <li><strong>Motivation:</strong> financial gain.</li>
+      <li><strong>Initial access:</strong> spear phishing with emails mimicking legitimate business communications.</li>
+      <li><strong>Malware:</strong> Carbanak (banking trojan), Griffon (lightweight backdoor for remote access), Bateleur (advanced malware for persistence and stealth).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Attack Simulation — Kill Chain</h2>
+    <ol>
+      <li><strong>Initial Access (Phishing)</strong> — personalised spear phishing emails built from harvested addresses and subdomains.</li>
+      <li><strong>Execution</strong> — a malicious attachment triggers a PowerShell script that installs malware, abusing trusted system tools.</li>
+      <li><strong>Persistence</strong> — registry run keys and scheduled tasks keep the malware active across reboots.</li>
+      <li><strong>Credential Access and Command and Control (C2)</strong> — credentials extracted by memory scraping or password dumping; systems connect to an external C2 server over encrypted, normal-looking traffic.</li>
+      <li><strong>Lateral Movement, Privilege Escalation and Internal Reconnaissance</strong> — stolen credentials move the attacker across the network to admin or domain-level access.</li>
+      <li><strong>Data Exfiltration and Impact</strong> — financial records and customer information exfiltrated over legitimate channels, with financial theft as the end goal.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>MITRE ATT&amp;CK Mapping</h2>
+    <table>
+      <tr><th>Tactic</th><th>Technique ID</th><th>Technique</th></tr>
+      <tr><td>Reconnaissance</td><td>T1596, T1593.003, T1589.002</td><td>Gather Victim Identity Information; Search Open Websites/Domains</td></tr>
+      <tr><td>Initial Access</td><td>T1566.001, T1204</td><td>Phishing: Spearphishing Attachment; User Execution</td></tr>
+      <tr><td>Execution</td><td>T1059</td><td>Command and Scripting Interpreter (PowerShell)</td></tr>
+      <tr><td>Persistence</td><td>T1547.001</td><td>Boot or Logon Autostart Execution: Registry Run Keys</td></tr>
+      <tr><td>Credential Access</td><td>T1003</td><td>OS Credential Dumping</td></tr>
+      <tr><td>Lateral Movement</td><td>T1021.001, T1021.004</td><td>Remote Services: RDP and SSH</td></tr>
+      <tr><td>Command and Control</td><td>T1071.001, T1071.003</td><td>Application Layer Protocol: Web Protocols and Mail Protocols</td></tr>
+      <tr><td>Exfiltration</td><td>T1041</td><td>Exfiltration Over C2 Channel</td></tr>
+      <tr><td>Impact</td><td>T1657</td><td>Financial Theft</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Defense Recommendations</h2>
+    <ul>
+      <li><strong>Prevent:</strong> advanced email gateways and URL scanning, phishing training on FIN7-style lures, MFA on email and accounts, disable or sandbox Office macros, attachment detonation and URL filtering.</li>
+      <li><strong>Detect:</strong> Endpoint Detection and Response (EDR) and SIEM for centralised log analysis and real-time alerting.</li>
+      <li><strong>Respond:</strong> incident response plans, regular drills, and fast isolation of compromised systems.</li>
+      <li><strong>Strategic:</strong> Zero Trust Architecture with continuous verification, threat intelligence feeds, and ongoing user awareness training.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills Demonstrated</h2>
+    <ul>
+      <li>Cyber Threat Intelligence (CTI)</li>
+      <li>OSINT — theHarvester, Shodan, Censys, Whois, Google dorking</li>
+      <li>Threat actor profiling</li>
+      <li>MITRE ATT&amp;CK mapping</li>
+      <li>Attack lifecycle / kill chain modelling</li>
+      <li>Defensive control design and Zero Trust Architecture</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Real-World Relevance</h2>
+    <p>This project shows how a real threat group moves from a single exposed email address to full data theft, and how layered, intelligence-driven defence — prevention, detection, and response at every stage — is the only effective answer. It demonstrates the practical CTI skills expected from SOC Analysts and Threat Intelligence Analysts.</p>
+    <p>The full written report is available on request. It is not published here, because its screenshots name the institution studied.</p>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 Adebayo Adebolu | Cybersecurity Portfolio</p>
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/adebayo-adebolu-a3ab7aa3" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/imhardeyboi" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="mailto:bayoadebolu1405@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+</footer>
+</body>
+</html>
