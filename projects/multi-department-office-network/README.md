@@ -44,7 +44,7 @@ Ping tests, 4 packets each. Before the ACL: Admin, Sales and HR could all ping e
 
 ## Packet Tracer file
 
-Open databridge-multi-department-office-network.pkz in Cisco Packet Tracer to view the topology and run the ping tests yourself. The file will be added to this folder.
+Open databridge-multi-department-office-network.pkz in Cisco Packet Tracer to view the topology and run the ping tests yourself. The file is in this folder.
 
 ## Live project page
 
