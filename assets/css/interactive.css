@@ -94,6 +94,12 @@
 #back-to-top.show { opacity: 1; pointer-events: auto; }
 #back-to-top:hover { transform: translateY(-3px); }
 
+/* ---- SOC dashboard: its cards use dark backgrounds, so their text must stay light even in light mode ---- */
+.dashboard-container .card { color: #e6edf3; }
+.dashboard-container .card p { color: #c9d1d9; }
+.dashboard-container .architecture,
+.dashboard-container .screenshot { color: #e6edf3; }
+
 /* ---- Dark-mode tweaks for the new layer ---- */
 body.dark .alert-feed li { border-color: #30363d; }
 body.dark .ping-rows li { background: #161b22; }
