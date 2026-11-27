@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Adebayo Adebolu</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/theme.css">
@@ -10,16 +11,16 @@
 </head>
 <body>
 <header class="navbar">
-  <a href="index.html" class="logo">🏗️<span>.</span></a>
-  <!-- <div class="logo">Adebayo<span>.</span></div> -->
-  <nav>
+  <a href="index.html" class="logo"><span class="logo-mark"><i class="fas fa-shield-halved"></i></span>Adebayo<span class="logo-dot">.</span></a>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+  <nav id="site-nav">
     <a href="index.html">Home</a>
     <a href="about.html" class="active">About</a>
     <a href="projects.html">Projects</a>
     <a href="resume.html">Resume</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
-      <button id="theme-toggle" type="button">🌙 Dark</button>
+    <button id="theme-toggle" type="button">🌙 Dark</button>
   </nav>
 </header>
 
@@ -28,6 +29,8 @@
     <h1>About Me</h1>
     <p>Cybersecurity Engineer | Network Specialist | System Analyst</p>
   </section>
+
+  <ul class="fact-row"><li><strong>Location</strong><span>Kamloops, BC, Canada</span></li><li><strong>Education</strong><span>MSc Computer Science, 2019</span></li><li><strong>Certification</strong><span>CompTIA Security+ — In Progress (Exam Dec 25, 2026)</span></li><li><strong>Focus</strong><span>SOC · Network Defense · Threat Intelligence</span></li></ul>
 
   <section class="content">
     <p>
@@ -44,7 +47,7 @@
     </p>
 
     <h2>Core Competencies</h2>
-    <ul>
+    <ul class="skills-list">
       <li>Cybersecurity Operations & SOC</li>
       <li>Network Engineering & Defense</li>
       <li>Cloud Infrastructure Security</li>
@@ -56,12 +59,18 @@
 </main>
 
 <footer>
-  <p>© 2026 Adebayo Adebolu | Cybersecurity Portfolio</p>
-  <div class="socials">
-    <a href="https://www.linkedin.com/in/adebayo-adebolu-a3ab7aa3" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/imhardeyboi" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="mailto:bayoadebolu1405@gmail.com"><i class="fas fa-envelope"></i></a>
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>Adebayo Adebolu</strong><p>Cybersecurity Engineer · Kamloops, BC, Canada</p></div>
+    <nav class="footer-links">
+      <a href="projects.html">Projects</a><a href="resume.html">Resume</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+    </nav>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/adebayo-adebolu-a3ab7aa3" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/imhardeyboi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:bayoadebolu1405@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
   </div>
+  <p class="footer-copy">© 2026 Adebayo Adebolu | Cybersecurity Portfolio</p>
 </footer>
 <button id="back-to-top" type="button" aria-label="Back to top">↑</button>
 <script src="assets/js/interactive.js"></script>

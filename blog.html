@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog | Adebayo Adebolu</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/theme.css">
@@ -10,16 +11,16 @@
 </head>
 <body>
 <header class="navbar">
-  <a href="index.html" class="logo">🏗️<span>.</span></a>
-  <!-- <div class="logo">Adebayo<span>.</span></div> -->
-  <nav>
+  <a href="index.html" class="logo"><span class="logo-mark"><i class="fas fa-shield-halved"></i></span>Adebayo<span class="logo-dot">.</span></a>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+  <nav id="site-nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="projects.html">Projects</a>
     <a href="resume.html">Resume</a>
     <a href="blog.html" class="active">Blog</a>
     <a href="contact.html">Contact</a>
-      <button id="theme-toggle" type="button">🌙 Dark</button>
+    <button id="theme-toggle" type="button">🌙 Dark</button>
   </nav>
 </header>
 
@@ -28,37 +29,51 @@
     <h1>Blog & Writeups</h1>
     <p>Cybersecurity research, labs, and professional insights</p>
   </section>
-<p>Coming soon..</p>
-  <!--
-  <section class="blog-list">
-    <article class="blog-card">
-      <h3>How I Built My First SOC Lab</h3>
-      <p>Step-by-step guide to building a home Security Operations Center lab.</p>
-      <a href="#">Read More</a>
-    </article>
-
-    <article class="blog-card">
-      <h3>Understanding Network Segmentation for Security</h3>
-      <p>Practical guide to VLANs, firewall rules, and zero trust principles.</p>
-      <a href="#">Read More</a>
-    </article>
-
-    <article class="blog-card">
-      <h3>Digital Forensics: From Compromise to Containment</h3>
-      <p>Analyzing attacks using memory, logs, and disk artifacts.</p>
-      <a href="#">Read More</a>
-    </article>
+<p class="lead">I'm writing about the work I'm doing — hands-on labs, threat research, and preparing for CompTIA Security+ SY0-701. New write-ups will appear here as they're finished.</p>
+  <section>
+    <h2>Start with the projects</h2>
+    <div class="blog-list">
+      <article class="blog-card">
+        <h3>Network Segmentation &amp; Access Control</h3>
+        <p>Designed and implemented secure network segmentation and Access Control List rules for an office environment.</p>
+        <a href="soho-network-design.html">Read the project</a>
+      </article>
+      <article class="blog-card">
+        <h3>Threat Intelligence: Profiling FIN7</h3>
+        <p>Simulated FIN7 attack on a financial institution — OSINT reconnaissance, threat actor profiling, kill chain modelling, MITRE ATT&amp;CK mapping, and layered defence recommendations.</p>
+        <a href="threat-intelligence-fin7.html">Read the project</a>
+      </article>
+      <article class="blog-card">
+        <h3>Enhancing Linux Endpoint Security with Wazuh</h3>
+        <p>Unauthorized Netcat detection on Linux endpoints using Wazuh SIEM — custom rules, real-time alerts, and a simulated attack from Kali Linux.</p>
+        <a href="wazuh-soc-detection.html">Read the project</a>
+      </article>
+    </div>
   </section>
-  -->
+  <section>
+    <h2>What I'm writing next</h2>
+    <p>These write-ups are in progress — not published posts yet:</p>
+    <ul>
+      <li>Security+ SY0-701 study notes</li>
+      <li>Building a home SOC lab with Wazuh</li>
+      <li>Network segmentation in practice</li>
+    </ul>
+  </section>
 </main>
 
 <footer>
-  <p>© 2026 Adebayo Adebolu | Cybersecurity Portfolio</p>
-  <div class="socials">
-    <a href="https://www.linkedin.com/in/adebayo-adebolu-a3ab7aa3" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/imhardeyboi" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="mailto:bayoadebolu1405@gmail.com"><i class="fas fa-envelope"></i></a>
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>Adebayo Adebolu</strong><p>Cybersecurity Engineer · Kamloops, BC, Canada</p></div>
+    <nav class="footer-links">
+      <a href="projects.html">Projects</a><a href="resume.html">Resume</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+    </nav>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/adebayo-adebolu-a3ab7aa3" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/imhardeyboi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:bayoadebolu1405@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
   </div>
+  <p class="footer-copy">© 2026 Adebayo Adebolu | Cybersecurity Portfolio</p>
 </footer>
 <button id="back-to-top" type="button" aria-label="Back to top">↑</button>
 <script src="assets/js/interactive.js"></script>

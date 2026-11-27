@@ -14,31 +14,59 @@
 <body>
 
 <header class="navbar">
-  <a href="index.html" class="logo">🏗️<span>.</span></a>
-  <!-- <div class="logo">Adebayo<span>.</span></div> -->
-  <nav>
-    <a href="index.html">Home</a>
+  <a href="index.html" class="logo"><span class="logo-mark"><i class="fas fa-shield-halved"></i></span>Adebayo<span class="logo-dot">.</span></a>
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+  <nav id="site-nav">
+    <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
     <a href="projects.html">Projects</a>
     <a href="resume.html">Resume</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
-    <!-- <button id="theme-toggle"><i class="fas fa-moon"></i></button> -->
-      <button id="theme-toggle" type="button">🌙 Dark</button>
+    <button id="theme-toggle" type="button">🌙 Dark</button>
   </nav>
 </header>
 
 <section class="hero">
   <div class="hero-content" data-aos="fade-up">
+    <p class="hero-eyebrow">Cybersecurity · SOC · Network Defense</p>
     <h1>Hello, I'm <span>Adebayo Adebolu</span></h1>
     <h2><span id="typed-text"></span></h2>
     <p>Cybersecurity Engineer | Network Defense | Digital Forensics | Cloud Security</p>
+    <ul class="hero-facts"><li><strong>MSc Computer Science</strong><span>2019</span></li><li><strong>CompTIA Security+</strong><span>In Progress · Exam Dec 25, 2026</span></li><li><strong>Based in</strong><span>Kamloops, BC, Canada</span></li></ul>
     <div class="hero-buttons">
       <a href="projects.html" class="btn">View Projects</a>
       <a href="resume.html" class="btn outline">Download Resume</a>
     </div>
   </div>
   <div id="particles-js"></div>
+</section>
+
+
+<section class="featured">
+  <h2>Featured Projects</h2>
+  <p class="section-sub">Hands-on work — designed, built and tested in the lab.</p>
+  <div class="projects-grid">
+    <div class="project-card" data-category="network">
+      <h3>Network Segmentation &amp; Access Control</h3>
+      <p>Designed and implemented secure network segmentation and Access Control List rules for an office environment.</p>
+      <p class="project-outcome">Outcome: HR → Admin blocked 0/4 after ACL 101 — all other traffic 4/4.</p>
+      <a href="soho-network-design.html">Details</a>
+    </div>
+    <div class="project-card" data-category="threat-intel">
+      <h3>Threat Intelligence: Profiling FIN7</h3>
+      <p>Simulated FIN7 attack on a financial institution — OSINT reconnaissance, threat actor profiling, kill chain modelling, MITRE ATT&amp;CK mapping, and layered defence recommendations.</p>
+      <p class="project-outcome">Outcome: 6-stage kill chain mapped to MITRE ATT&amp;CK, with layered defence recommendations.</p>
+      <a href="threat-intelligence-fin7.html">Details</a>
+    </div>
+    <div class="project-card" data-category="soc">
+      <h3>Enhancing Linux Endpoint Security with Wazuh</h3>
+      <p>Unauthorized Netcat detection on Linux endpoints using Wazuh SIEM — custom rules, real-time alerts, and a simulated attack from Kali Linux.</p>
+      <p class="project-outcome">Outcome: custom rule raised a level-7 alert on unauthorised Netcat (port 4444).</p>
+      <a href="wazuh-soc-detection.html">Details</a>
+    </div>
+  </div>
+  <p class="center"><a href="projects.html" class="btn outline-dark">All Projects</a></p>
 </section>
 
 <section class="highlights" data-aos="fade-up">
@@ -52,12 +80,18 @@
 </section>
 
 <footer>
-  <p>© 2026 Adebayo Adebolu | Cybersecurity Portfolio</p>
-  <div class="socials">
-    <a href="https://www.linkedin.com/in/adebayo-adebolu-a3ab7aa3" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/imhardeyboi" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="mailto:bayoadebolu1405@gmail.com"><i class="fas fa-envelope"></i></a>
+  <div class="footer-inner">
+    <div class="footer-brand"><strong>Adebayo Adebolu</strong><p>Cybersecurity Engineer · Kamloops, BC, Canada</p></div>
+    <nav class="footer-links">
+      <a href="projects.html">Projects</a><a href="resume.html">Resume</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+    </nav>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/adebayo-adebolu-a3ab7aa3" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/imhardeyboi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:bayoadebolu1405@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
   </div>
+  <p class="footer-copy">© 2026 Adebayo Adebolu | Cybersecurity Portfolio</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
